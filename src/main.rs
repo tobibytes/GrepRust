@@ -1,5 +1,4 @@
 use anyhow::{Context, Result};
-use log::{info, warn};
 use clap::Parser;
 
 
@@ -11,15 +10,11 @@ struct Cli {
 fn main() -> Result<()>{
 
     let args = Cli::parse(); 
-    env_logger::init();
     let content = std::fs::read_to_string(&args.path)
     .with_context(|| format!("Error reading: `{}`", args.path.display()))?;
 
     for line in content.lines() {
-        warn!("not here");
-        if line.contains(&args.pattern) {
-            info!("working");
-            
+        if line.contains(&args.pattern) {       
             println!("{}", line);
         }
 
