@@ -1,0 +1,18 @@
+[package]
+name = "teegrrs"
+version = "0.1.0"
+authors = ["Oluwatobi Olajide <tobiolajide01@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "A tool to search files"
+readme = "README.md"
+homepage = "https://github.com/tobibytes/GrepRust"
+repository = "https://github.com/tobibytes/GrepRust"
+keywords = ["cli", "search", "rust", "grep"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+anyhow = "1.0"
+indicatif = {version = "*", features = ["rayon"]}
+log = "0.4.27"
+env_logger = "0.11.8"
